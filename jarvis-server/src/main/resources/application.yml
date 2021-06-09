@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: javis
+  # 生效配置文件
+  profiles:
+    active: dev
+
+  # jackson序列化配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: NON_NULL
+    #    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 100MB #最大上传文件大小
+      max-request-size: 100MB # 最大请求大小
+      enabled: true
+  # 数据库演进工具
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/change-master.xml
+server:
+  port: 8080
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+
+
+cache:
+  config:
+    enable: true
+    type: jvm

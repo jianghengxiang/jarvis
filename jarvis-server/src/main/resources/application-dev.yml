@@ -1,0 +1,44 @@
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/jarvis?useUnicode=true&characterEncoding=utf-8&autoReconnect=true
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: root
+        password: root
+    redis:
+        database: 0
+        host: localhost
+        port: 6379
+#        password:   # 密码（默认为空）
+        timeout: 6000ms  # 连接超时时长（毫秒）
+        jedis:
+            pool:
+                max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+                max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+                max-idle: 10      # 连接池中的最大空闲连接
+                min-idle: 5       # 连接池中的最小空闲连接
+
+#    mail:
+#        host: smtp.exmail.qq.com
+#        username: appstore-admin@wisedu.com
+#        password: Jinzhi@2020
+#        port: 465
+#        properties:
+#            mail:
+#                smtp:
+#                    ssl:
+#                        enable: true
+#                    starttls:
+#                        enable: true
+#                        required: true
+#                    connectiontimeout: 5000
+#                    timeout: 15000
+#                    writetimeout: 5000
+#
+#wx:
+#    appID: wx4b50b325e0c106a5
+#    appsecret: de26e5326f35a0e1e9d9f77f5196d161
+#    access_token: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={appDd}&secret={appSecret}
+#    js_ticket: https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token={accessToken}&type=jsapi
+#    oauth_access_token: https://api.weixin.qq.com/sns/oauth2/access_token?appid={appID}&secret={appSecret}&code={code}&grant_type=authorization_code
+#    user_info: https://api.weixin.qq.com/sns/userinfo?access_token={accessToken}&openid={openID}&lang=zh_CN
+
